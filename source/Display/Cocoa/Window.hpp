@@ -34,6 +34,8 @@ namespace Display
 			
 			virtual void set_cursor(Cursor cursor) override;
 			
+			auto view() const noexcept {return _view;}
+			
 		protected:
 			void update_cursor();
 			
