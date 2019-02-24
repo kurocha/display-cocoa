@@ -124,18 +124,5 @@ namespace Display
 				[_view.window orderOut:nil];
 			}
 		}
-		
-		// void Window::prepare(Layers & layers, Extensions & extensions)
-		// {
-		// 	extensions.push_back(VK_MVK_MACOS_SURFACE_EXTENSION_NAME);
-		// }
-		// 
-		// void Window::setup_surface()
-		// {
-		// 	auto surface_create_info = vk::MacOSSurfaceCreateInfoMVK()
-		// 		.setPView(_view_controller.view);
-		// 
-		// 	_surface = _instance.createMacOSSurfaceMVKUnique(surface_create_info, _allocation_callbacks);
-		// }
 	}
 }
