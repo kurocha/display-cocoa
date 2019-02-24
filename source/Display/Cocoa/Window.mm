@@ -116,8 +116,6 @@ namespace Display
 			[_view.window makeKeyAndOrderFront:NSApp];
 			[_view.window makeFirstResponder:_view];
 			
-			NSLog(@"_view.layerClass", _view.layer);
-			
 			update_cursor();
 		}
 		
