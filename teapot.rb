@@ -30,6 +30,8 @@ define_target 'display-cocoa-library' do |target|
 		append linkflags library_path
 		append header_search_paths source_root
 	end
+	
+	target.provides :display_native => 'Library/Display/Cocoa'
 end
 
 define_target 'display-cocoa-test' do |target|
