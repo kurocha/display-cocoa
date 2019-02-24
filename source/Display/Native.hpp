@@ -10,3 +10,8 @@
 
 #include "Cocoa/Application.hpp"
 #include "Cocoa/Window.hpp"
+
+namespace Display
+{
+	using Native = Cocoa;
+}
