@@ -47,8 +47,6 @@ static CVReturn displayLinkCallback(
 
 - (BOOL)acceptsFirstResponder
 {
-	NSLog(@"acceptsFirstResponder");
-	
 	return YES;
 }
 
