@@ -130,11 +130,6 @@ static CVReturn displayLinkCallback(
 	CVDisplayLinkStart(_displayLink);
 }
 
-- (BOOL)wantsLayer
-{
-	return YES;
-}
-
 - (BOOL)wantsUpdateLayer
 {
 	return YES;

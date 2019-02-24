@@ -99,6 +99,7 @@ namespace Display
 				
 				_view = [[DCView alloc] initWithFrame:rect];
 				_view.handler = this;
+				_view.wantsLayer = YES;
 				_view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
 				
 				_window.contentView = _view;
@@ -114,6 +115,8 @@ namespace Display
 			//[_handle orderFront:NSApp];
 			[_view.window makeKeyAndOrderFront:NSApp];
 			[_view.window makeFirstResponder:_view];
+			
+			NSLog(@"_view.layerClass", _view.layer);
 			
 			update_cursor();
 		}
