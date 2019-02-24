@@ -36,7 +36,7 @@ streams:
   :commit: dc8b15f98e04ec3661d530b87d87b072a4d2c997
   :branch: master
 display:
-  :commit: 9868263fecac2bc7610a66941f3f95b5ec99e1ef
+  :commit: 5cfca4fd578ba69a0220a6922f6139fe2615540c
   :branch: master
 input:
   :commit: 82a08439b86d5ebadedc924b884852a9cb8075fe

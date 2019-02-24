@@ -33,6 +33,19 @@ namespace Display
 			}
 		}
 		
+		void Window::set_title(const std::string & title)
+		{
+			Display::Window::set_title(title);
+			
+			if (_view)
+				update_title();
+		}
+		
+		void Window::update_title()
+		{
+			_view.window.title = [NSString stringWithUTF8String:_title.c_str()];
+		}
+		
 		void Window::set_cursor(Cursor cursor)
 		{
 			Display::Window::set_cursor(cursor);
@@ -47,10 +60,10 @@ namespace Display
 				CGDisplayHideCursor(kCGNullDirectDisplay);
 				CGAssociateMouseAndMouseCursorPosition(false);
 				
-				[_view setAcceptsTouchEvents:YES];
+				_view.allowedTouchTypes = NSTouchTypeMaskDirect;
 				[_view warpCursorToCenter];
 			} else {
-				[_view setAcceptsTouchEvents:NO];
+				_view.allowedTouchTypes = 0;
 				
 				CGAssociateMouseAndMouseCursorPosition(true);
 				CGDisplayShowCursor(kCGNullDirectDisplay);
@@ -71,7 +84,6 @@ namespace Display
 				
 				NSWindow * _window = [[NSWindow alloc] initWithContentRect:rect styleMask:style backing:NSBackingStoreBuffered defer:NO];
 				
-				_window.title = @"Vizor";
 				_window.acceptsMouseMovedEvents = YES;
 				_window.releasedWhenClosed = NO;
 				
@@ -95,6 +107,8 @@ namespace Display
 					[_window center];
 				
 				_window.initialFirstResponder = _view;
+				
+				update_title();
 			}
 			
 			//[_handle orderFront:NSApp];

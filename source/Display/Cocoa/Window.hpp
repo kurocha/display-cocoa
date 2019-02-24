@@ -32,11 +32,13 @@ namespace Display
 			
 			virtual void hide() override;
 			
+			virtual void set_title(const std::string & title) override;
 			virtual void set_cursor(Cursor cursor) override;
 			
 			auto view() const noexcept {return _view;}
 			
 		protected:
+			void update_title();
 			void update_cursor();
 			
 #ifdef __OBJC__

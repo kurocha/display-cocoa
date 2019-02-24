@@ -26,7 +26,8 @@ namespace Display
 			{
 				_window = std::make_unique<Window>(*this);
 				
-				_window->set_cursor(Display::Cursor::HIDDEN);
+				//_window->set_cursor(Display::Cursor::HIDDEN);
+				_window->set_title("Hello World");
 				
 				_window->show();
 			}
