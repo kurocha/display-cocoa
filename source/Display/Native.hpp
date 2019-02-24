@@ -13,5 +13,5 @@
 
 namespace Display
 {
-	using Native = Cocoa;
+	namespace Native = Cocoa;
 }
